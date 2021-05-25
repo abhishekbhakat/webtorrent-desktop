@@ -31,5 +31,5 @@ jobs:
     - uses: actions/upload-artifact@v2.2.3
       with:
         name: Dist
-        path: ${{ github.workspace }}/dist/WebTorrent-win32-x64/WebTorrent.exe
+        path: ${{ github.workspace }}\dist\WebTorrent-win32-x64\WebTorrent.exe
         if-no-files-found: error
