@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [15.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -23,7 +23,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm run package -- win32 --sign
-    - uses: Hs1r1us/Release-AIO@v1.0
+    - uses: PeerXu/upload-asset@v1
       with:
-        tag_name: ${{ github.ref }}
-        asset_files: ${{ github.workspace }}\dist\WebTorrent-win32-x64\WebTorrent.exe
+        file: ${{ github.workspace }}\dist\WebTorrent-win32-x64\WebTorrent.exe
+        os: linux
+        arch: amd64
+        with_tag: true 
