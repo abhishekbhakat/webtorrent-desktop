@@ -28,7 +28,6 @@ jobs:
     - run: npm install
     - run: npm test
     - run: npm run package --package=exe
-    - name: Upload a Build Artifact
     - uses: actions/upload-artifact@v2.2.3
       with:
         name: Dist
