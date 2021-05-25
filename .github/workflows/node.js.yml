@@ -31,4 +31,5 @@ jobs:
     - uses: actions/upload-artifact@v2.2.3
       with:
         name: Dist
-        path: dist\WebTorrent-win32-x64\WebTorrent.exe
+        path: ./dist/WebTorrent-win32-x64/WebTorrent.exe
+        if-no-files-found: error
